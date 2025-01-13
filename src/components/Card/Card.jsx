@@ -1,18 +1,11 @@
-import React from "react";
 import "./Card.css";
-
 import trainer from "../../assets/trainerB.png";
-import { profile } from "../../utils/constants";
 
 function Card({ currentPokemon }) {
   const handleReset = () => {
     console.log("Reset button clicked");
     window.location.reload();
   };
-
-  const char = `Base XP: ${currentPokemon?.base_experience}  Base HP: ${currentPokemon?.stats[0].base_stat}`;
-
-  console.log("This is current pokemon", currentPokemon);
 
   return (
     <div className="card">

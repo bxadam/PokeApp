@@ -1,5 +1,3 @@
-import React from "react";
-import trainer from "../../assets/trainerB.png";
 import "./Footer.css";
 
 function Footer({ handleAccept }) {

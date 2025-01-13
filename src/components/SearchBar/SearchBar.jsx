@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({
+function SearchBar({
   placeholder = "Search by Pokémon name or Number ID...",
   handleSearch,
-}) => {
+}) {
   const [input, setInput] = useState("");
 
   const handleInputChange = (e) => {
@@ -33,6 +33,6 @@ const SearchBar = ({
       </form>
     </div>
   );
-};
+}
 
 export default SearchBar;

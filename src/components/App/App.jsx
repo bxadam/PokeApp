@@ -1,4 +1,4 @@
-import { useState, React, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -19,7 +19,6 @@ function App() {
     return getPokemon(lowerName(input))
       .then((res) => {
         setCurrentPokemon(res);
-        console.log(currentPokemon);
       })
       .catch((err) => {
         console.log(err);
