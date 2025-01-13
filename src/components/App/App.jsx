@@ -26,6 +26,10 @@ function App() {
       });
   };
 
+  const handleAccept = () => {
+    alert("Contact: 704-953-5410 or bx.adam03@gmail.com");
+  };
+
   useEffect(() => {
     setFade(true);
   }, []);
@@ -41,7 +45,7 @@ function App() {
       <Header />
       <SearchBar handleSearch={handleSearch} />
       <Card currentPokemon={currentPokemon} />
-      <Footer />
+      <Footer handleAccept={handleAccept} />
     </div>
   );
 }

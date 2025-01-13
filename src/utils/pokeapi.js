@@ -5,6 +5,9 @@ function validateRes() {
     if (res.ok) {
       return res.json();
     }
+    if (res.status === 404) {
+      return alert("Sorry, that Pokémon doesn't exist. Please try again.");
+    }
   };
 }
 
