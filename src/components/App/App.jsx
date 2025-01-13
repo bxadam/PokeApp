@@ -3,9 +3,28 @@ import "./App.css";
 import Header from "../Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../Card/Card";
+import Footer from "../Footer/Footer";
+
+import { getPokemon } from "../../utils/pokeapi";
 
 function App() {
   const [fade, setFade] = useState(false);
+  const [currentPokemon, setCurrentPokemon] = useState(null);
+
+  function lowerName(input) {
+    return input.toLowerCase();
+  }
+
+  const handleSearch = (input) => {
+    return getPokemon(lowerName(input))
+      .then((res) => {
+        setCurrentPokemon(res);
+        console.log(currentPokemon);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     setFade(true);
@@ -20,8 +39,9 @@ function App() {
       className="app"
     >
       <Header />
-      <SearchBar></SearchBar>
-      <Card />
+      <SearchBar handleSearch={handleSearch} />
+      <Card currentPokemon={currentPokemon} />
+      <Footer />
     </div>
   );
 }

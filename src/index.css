@@ -2,3 +2,13 @@
   font-family: "Pokemon Solid";
   src: url("./vendor/PokemonSolid.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Pokemon Classic";
+  src: url("./vendor/PokemonClassic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pokemon Classic 2";
+  src: url("./vendor/PokemonClassic2.woff2") format("woff2");
+}

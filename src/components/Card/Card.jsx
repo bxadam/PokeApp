@@ -1,39 +1,97 @@
 import React from "react";
 import "./Card.css";
 
-function Card() {
+import trainer from "../../assets/trainerB.png";
+import { profile } from "../../utils/constants";
+
+function Card({ currentPokemon }) {
   const handleReset = () => {
     console.log("Reset button clicked");
     window.location.reload();
   };
 
+  const char = `Base XP: ${currentPokemon?.base_experience}  Base HP: ${currentPokemon?.stats[0].base_stat}`;
+
+  console.log("This is current pokemon", currentPokemon);
+
   return (
     <div className="card">
       <div className="card__header">
-        <h2 className="card__header-title">Wooper</h2>
-        <p className="card__header-id">#29</p>
+        <h2 className="card__header-title">
+          {currentPokemon?.name === undefined
+            ? "Brandon Adam"
+            : currentPokemon?.name.toUpperCase()}
+        </h2>
+        <p className="card__header-id">
+          {currentPokemon?.id === undefined ? "" : `#${currentPokemon?.id}`}
+        </p>
       </div>
       <img
-        src="https://assets.pokemon.com/assets/cms2/img/pokedex/full//194.png"
-        alt="Wooper"
+        src={
+          currentPokemon?.sprites?.front_default
+            ? currentPokemon?.sprites.front_default
+            : `${trainer}`
+        }
+        alt="sprite"
         className="card__image"
       />
       <div className="card__stats">
         <p className="card__stat-ability">
-          Ability: Damp, Water Absord, Unaware
+          Ability:
+          {currentPokemon?.abilities === undefined
+            ? " HTML, CSS, Javascript, React, NPM, Webpack, Nginx, RestAPI"
+            : ` ${currentPokemon?.abilities[0].ability.name},
+                ${currentPokemon?.abilities[1].ability.name}`}
         </p>
         <p className="card__stat-metrics">
-          Stats: Height 0.4 m (1′04″) Weight 8.5 kg (18.7 lbs)
+          Stats: Height:
+          {currentPokemon?.height === undefined
+            ? " 6'0"
+            : ` ${currentPokemon?.height}`}{" "}
+          ft - Weight:
+          {currentPokemon?.weight === undefined
+            ? " 155"
+            : ` ${currentPokemon?.weight}`}{" "}
+          lbs
         </p>
       </div>
-      <p className="card__description">
-        Wooper is a small Pokémon with a large head and beady black eyes with
-        white pupils. It has no arms, stubby feet with no legs, a comparatively
-        long tail, and spiky antennae jutting out from its head, on which are
-        four branches that function as gills. Most of its body is a pale blue,
-        including its tail, feet, and head - its eyes, gills, the patterns on
-        its stomach, and the inside of its mouth are the sole exceptions.
-      </p>
+      <div className="card__description">
+        <p className="card__description-xp">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base XP: ${currentPokemon?.base_experience}`}
+        </p>
+        <p className="card__description-hp">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base HP: ${currentPokemon?.stats[0].base_stat}`}
+        </p>
+        <p className="card__description-attack">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base Attack: ${currentPokemon?.stats[1].base_stat}`}
+        </p>
+        <p className="card__description-defense">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base Defense: ${currentPokemon?.stats[2].base_stat}`}
+        </p>
+        <p className="card__description-special-attack">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base SP Attack: ${currentPokemon?.stats[3].base_stat}`}
+        </p>
+        <p className="card__description-special-defense">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base SP Defense: ${currentPokemon?.stats[4].base_stat}`}
+        </p>
+        <p className="card__description-speed">
+          {currentPokemon?.base_experience === undefined
+            ? ""
+            : `Base Speed: ${currentPokemon?.stats[5].base_stat}`}
+        </p>
+      </div>
       <button onClick={handleReset} className="card__btn-reset">
         Reset
       </button>
