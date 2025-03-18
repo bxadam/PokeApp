@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.footer__trainer-text {
+  font-family: "Pokemon Classic", "Pokemon Classic 2", Arial, Helvetica,
+    sans-serif;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.footer__trainer-btn {
+  max-width: 150px;
+  width: 100%;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #004cfd;
+  color: #ffde00;
+  font-family: "Pokemon Solid", Arial, Helvetica, sans-serif;
+  text-shadow: #ffffff 2px 0 10px;
+  cursor: pointer;
+}

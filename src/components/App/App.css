@@ -1,0 +1,13 @@
+.app {
+  background-color: #ff0000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.app.visible {
+  opacity: 1;
+}
