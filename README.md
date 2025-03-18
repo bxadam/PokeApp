@@ -6,4 +6,4 @@ It features include developer info, pokemon info and the use of JS, HTML/CSS and
 
 Deployed site can be found at:
 
-https://67d98d0af5b9490009b90c0d--nimble-biscotti-2f871b.netlify.app/
+https://67d99b98967c22000804b49f--nimble-biscotti-2f871b.netlify.app/
