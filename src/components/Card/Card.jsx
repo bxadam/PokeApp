@@ -7,6 +7,21 @@ function Card({ currentPokemon }) {
     window.location.reload();
   };
 
+  const abilityDescription = () => {
+    const ability1 = currentPokemon?.abilities[0].ability.name;
+    const ability2 = currentPokemon?.abilities[1]?.ability.name;
+    const text = " HTML, CSS, Javascript, React, NPM, Webpack, Nginx, RestAPIs";
+
+    if (currentPokemon?.abilities === undefined) {
+      return text;
+    }
+    if (ability2 != undefined) {
+      return ` ${ability1}, ${ability2}`;
+    } else {
+      return ` ${ability1}`;
+    }
+  };
+
   return (
     <div className="card">
       <div className="card__header">
@@ -31,10 +46,7 @@ function Card({ currentPokemon }) {
       <div className="card__stats">
         <p className="card__stat-ability">
           Ability:
-          {currentPokemon?.abilities === undefined
-            ? " HTML, CSS, Javascript, React, NPM, Webpack, Nginx, RestAPI"
-            : ` ${currentPokemon?.abilities[0].ability.name},
-                ${currentPokemon?.abilities[1].ability.name}`}
+          {abilityDescription()}
         </p>
         <p className="card__stat-metrics">
           Stats: Height:
