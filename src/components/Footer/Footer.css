@@ -16,8 +16,8 @@
 }
 
 .footer__trainer-btn {
-  max-height: 50px;
-  width: 65px;
+  max-width: 150px;
+  width: 100%;
   font-size: 12px;
   padding: 10px;
   border: none;
