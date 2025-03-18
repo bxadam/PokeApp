@@ -5,6 +5,8 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Card from "../Card/Card";
 import Footer from "../Footer/Footer";
 
+import { profile } from "../../utils/constants.js";
+
 import { getPokemon } from "../../utils/pokeapi";
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
   };
 
   const handleAccept = () => {
-    alert("Contact: 704-953-5410 or bx.adam03@gmail.com");
+    alert(`${profile}\n\nContact: 704-953-5410 or bx.adam03@gmail.com`);
   };
 
   useEffect(() => {
